@@ -12,3 +12,16 @@ div button {
   background-color: rgb(99, 18, 88);
   color: white;
 }
+input {
+  width: 200px;
+  height: 30px;
+  border-radius: 50px;
+  color: white;
+  background-color: rgb(99, 18, 88);
+}
+.delete {
+  margin: 10px;
+}
+.delete button {
+  width: 100px;
+}
