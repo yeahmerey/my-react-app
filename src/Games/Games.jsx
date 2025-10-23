@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Games.css";
 import Game from "../Game/Game.jsx";
 
+import useDebounce from "../useDebounce";
 export default function Games() {
   const [games, setGames] = useState([]);
   const [filterQuery, setFilterQuery] = useState("");
+  const [debounce, setDebounce] = useState("");
 
+  const debounce2 = useDebounce(filterQuery, 1500);
   const api = "/api";
 
   function DeleteButton() {
@@ -23,9 +26,20 @@ export default function Games() {
     setGames(data);
   }
 
+  // const filteredGames = games.filter((game) =>
+  //   game.title.toLowerCase().includes(filterQuery.toLowerCase())
+  // );
   const filteredGames = games.filter((game) =>
-    game.title.toLowerCase().includes(filterQuery.toLowerCase())
+    game.title.toLowerCase().includes(debounce.toLowerCase())
   );
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setDebounce(filterQuery);
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [filterQuery]);
+
   return (
     <div>
       <p>Click button to Load Data :</p>
@@ -33,6 +47,8 @@ export default function Games() {
       <button onClick={load}>Load Games</button>
       <p>Count of games : {games?.length || "Empty data"}</p>
       <p id="search">Searching : {filterQuery || "Empty"}</p>
+      <p id="search">Debounce : {debounce || "Empty"}</p>
+      <p id="search">Custom hook : {debounce2 || "Empty"}</p>
       <input
         value={filterQuery}
         onChange={(e) => setFilterQuery(e.target.value)}
