@@ -1,28 +1,24 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router";
-import Games from "./components/Games/Games.jsx";
-import Home from "./components/Home/Home.jsx";
-import About from "./components/About/About.jsx";
-import User from "./components/User.jsx";
-import Login from "./components/Login/Login.jsx";
-import Stats from "./components/Stats.jsx";
-import Settings from "./components/Settings.jsx";
-import Dashboard from "./components/Dashboard/Dashboard.jsx";
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import RootLayout from "./components/Layout/RootLayout.jsx";
+import Home from "./pages/Home/Home.jsx";
+import About from "./pages/About/About.jsx";
+import Items from "./pages/Items/Items.jsx";
+import ItemDetails from "./pages/ItemDetails/ItemDetails.jsx";
+import Login from "./pages/Login/Login.jsx";
+
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/user/:id" element={<User />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="stats" element={<Stats />} />
-          <Route path="settings" element={<Settings />} />
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="items" element={<Items />} />
+          <Route path="items/:id" element={<ItemDetails />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;

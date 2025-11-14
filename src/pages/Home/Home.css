@@ -1,0 +1,10 @@
+.home {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home img {
+  width: 280px;
+  border-radius: 20px;
+  margin-top: 20px;
+}

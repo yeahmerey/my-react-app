@@ -1,0 +1,26 @@
+.card {
+  width: 100%;
+  list-style: none;
+  padding: 16px;
+  margin: 16px 0;
+  border: 1px solid #eaeaea;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.card h3 {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 3px 0;
+  color: #666;
+}

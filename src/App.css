@@ -1,6 +1,27 @@
 #root {
-  max-width: 4000px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  color: #111;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  margin: 24px 0;
 }
