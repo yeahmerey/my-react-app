@@ -1,7 +1,11 @@
 import "./App.css";
-import MainPage from "./MainPage.jsx";
+import Games from "./components/Games/Games.jsx";
 function App() {
-  return <MainPage />;
+  return (
+    <div>
+      <Games />
+    </div>
+  );
 }
 
 export default App;
