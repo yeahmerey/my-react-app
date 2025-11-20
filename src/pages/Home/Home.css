@@ -2,7 +2,9 @@
   text-align: center;
   padding: 40px 20px;
 }
-
+p {
+  color: white;
+}
 .home img {
   width: 280px;
   border-radius: 20px;

@@ -6,6 +6,7 @@ import ErrorBox from "../../components/ErrorBox/ErrorBox.jsx";
 import Card from "../../components/Card/Card.jsx";
 
 import "./Items.css";
+
 export default function Items() {
   const [params, setParams] = useSearchParams();
   const q = params.get("q") || "";

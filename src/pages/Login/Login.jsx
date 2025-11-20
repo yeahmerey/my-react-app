@@ -1,3 +1,4 @@
+import "./Login.css";
 export default function Login() {
-  return <h1>Auth to be added</h1>;
+  return <h2>Auth to be added</h2>;
 }
