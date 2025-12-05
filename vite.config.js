@@ -7,9 +7,16 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://www.freetogame.com/api/games",
+        target: "https://rickandmortyapi.com",
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/api/, ""),
+      },
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
       },
     },
   },

@@ -12,3 +12,23 @@ createRoot(document.getElementById("root")).render(
     </Provider>
   </StrictMode>
 );
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((registration) => {
+        console.log(
+          "[App] Service Worker registered successfully:",
+          registration.scope
+        );
+
+        // Проверяем обновления каждые 60 секунд
+        setInterval(() => {
+          registration.update();
+        }, 60000);
+      })
+      .catch((error) => {
+        console.error("[App] Service Worker registration failed:", error);
+      });
+  });
+}
