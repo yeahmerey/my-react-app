@@ -16,9 +16,11 @@ export default function ItemDetails() {
   // const [item, setItem] = useState(null);
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState("");
+
   const { selectedItem, loadingItem, errorItem } = useSelector(
     (state) => state.items
   );
+
   // useEffect(() => {
   //   setLoading(true);
   //   getById(id)

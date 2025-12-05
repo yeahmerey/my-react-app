@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as itemsService from "../../services/itemsService";
+
 const initialState = {
   list: [],
   selectedItem: null,
